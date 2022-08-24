@@ -4,6 +4,7 @@ A simple blog website made using Flask, HTML, CSS and Bootstrap
 with PostgreSQL database and deployed on Heroku.
 
 
+
 ## Badges 🏷
 
 
@@ -12,7 +13,8 @@ with PostgreSQL database and deployed on Heroku.
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)  
+
 ## Lessons Learned 📚
 
 This is my first fully functional web project. I learned to use the Flask web framework through the process of creating a quick and simple backend.
@@ -20,7 +22,8 @@ This is my first fully functional web project. I learned to use the Flask web fr
 Implementing **user authentication** with flask and password hashing.
 
 Experimented with relational databases and learned to perform 
-CRUD operations through an Object-relational mapper (SQL-Alchemy) in Python.
+CRUD operations through an Object-relational mapper (SQL-Alchemy) in Python.  
+
 
 
 ## Environment Variables 🔐
@@ -28,7 +31,8 @@ CRUD operations through an Object-relational mapper (SQL-Alchemy) in Python.
 To run this project, you will need to add the following environment 
 variables to your virtual environment
 
-`SECRET_KEY` - Flask app secret key
+`SECRET_KEY` - Flask app secret key  
+
 
 
 
