@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:12-bullseye
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 1s
+      timeout: 3s
+      retries: 10
+
+  flask_blog:
+    depends_on:
+      db:
+        condition: service_healthy
+    build:
+      flask_blog
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: db 
+    links:
+      - db
+    ports:
+      - "0.0.0.0:80:5000"
