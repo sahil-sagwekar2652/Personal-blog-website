@@ -1,8 +1,7 @@
 services:
   nginx:
     depends_on:
-      flask_blog:
-        condition: service_healthy
+      - flask_blog
     build:
       nginx
     links:
@@ -14,6 +13,8 @@ services:
     image: postgres:12-bullseye
     env_file:
       - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
       interval: 1s
@@ -23,7 +24,7 @@ services:
   flask_blog:
     depends_on:
       db:
-        condition: service_healthy
+        condition: service_started
     build:
       flask_blog
     env_file:
@@ -37,5 +38,8 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
-    # ports:
-    #   - "0.0.0.0:80:5000"
+    restart: on-failure
+
+volumes:
+  postgres_data:
+    name: "db_volume"
