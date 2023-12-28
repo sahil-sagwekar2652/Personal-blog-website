@@ -1,4 +1,15 @@
 services:
+  nginx:
+    depends_on:
+      flask_blog:
+        condition: service_healthy
+    build:
+      nginx
+    links:
+        - flask_blog
+    ports:
+      - 80:80
+
   db:
     image: postgres:12-bullseye
     env_file:
@@ -21,5 +32,10 @@ services:
       DATABASE_URL: db 
     links:
       - db
-    ports:
-      - "0.0.0.0:80:5000"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:5000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    # ports:
+    #   - "0.0.0.0:80:5000"
