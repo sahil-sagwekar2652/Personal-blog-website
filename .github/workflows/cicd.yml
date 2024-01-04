@@ -27,4 +27,4 @@ jobs:
         with:
           context: https://github.com/sahil-sagwekar2652/Personal-blog-website.git#master:flask_blog
           push: true
-          tags: sahil-sagwekar2652/personal-blog-website:${{ env.RELEASE_VERSION }}
+          tags: sahilsagwekar2652/personal-blog-website:${{ env.RELEASE_VERSION }}
