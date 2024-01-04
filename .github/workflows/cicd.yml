@@ -25,6 +25,7 @@ jobs:
         name: Build and push flask_blog
         uses: docker/build-push-action@v5
         with:
-          file: /flask_blog/Dockerfile
+          # file: /flask_blog/Dockerfile
+          context: https://github.com/sahil-sagwekar2652/Personal-blog-website.git#master:flask_blog
           push: true
           tags: ${{ env.RELEASE_VERSION }}
