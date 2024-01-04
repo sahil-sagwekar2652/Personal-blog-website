@@ -22,11 +22,10 @@ services:
       retries: 10
 
   flask_blog:
+    image: sahilsagwekar2652/personal-blog-website:master
     depends_on:
       db:
         condition: service_started
-    build:
-      flask_blog
     env_file:
       - .env
     environment:
