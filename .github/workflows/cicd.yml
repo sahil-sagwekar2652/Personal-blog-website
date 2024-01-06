@@ -33,3 +33,13 @@ jobs:
           context: https://github.com/sahil-sagwekar2652/Personal-blog-website.git#master:flask_blog
           push: true
           tags: sahilsagwekar2652/personal-blog-website:${{ env.RELEASE_VERSION }}
+      -
+        name: deploy updated images
+        uses: nekiro/ssh-job@main
+        with:
+          host: ${{ secrets.HOST }}
+          key: ${{ secrets.KEY }}
+          user: ${{ secrets.USER }}
+          command: |
+            cd Personal-blog-website
+            docker compose pull flask_blog && docker compose up -d && docker image prune
