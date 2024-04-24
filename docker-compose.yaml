@@ -2,7 +2,6 @@ services:
   nginx:
     depends_on:
       - flask_blog
-      - certbot
     image: nginx:stable
     restart: always
     links:
@@ -12,12 +11,17 @@ services:
       - 443:443
     volumes:
       - ./nginx/:/etc/nginx/conf.d/:ro
-      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/www/:/var/www/certbot/:ro
+        #      - ./certbot/conf/:/etc/nginx/ssl/:ro
+      - ./certbot/conf/:/etc/letsencrypt:ro # mounting the folder to the nginx container 
 
   certbot:
     image: certbot/certbot:latest
+    depends_on:
+      - nginx
+    command: certonly --reinstall --webroot --webroot-path=/var/www/certbot --email sahilss2652@gmail.com --agree-tos --no-eff-email -d blog.sahilsagwekar.co
     volumes :
-      - ./certbot/www:/var/www/certbot/:rw 
+      - ./certbot/www/:/var/www/certbot/:rw 
       - ./certbot/conf/:/etc/letsencrypt/:rw
 
   db:
