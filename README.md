@@ -1,28 +1,20 @@
 # Personal blog website 👨‍💻
 
-A simple blog website made using Flask, HTML, CSS and Bootstrap
-with PostgreSQL database and deployed on Heroku.
+- A blog website made using Flask, HTML, CSS and Bootstrap
+with PostgreSQL database and NGINX web-server and deployed using Docker on AWS EC2.
+- Designed using micro-services pattern, implemented CICD for seamless updates.
 
-
+![flask_blog_cicd](https://github.com/sahil-sagwekar2652/Personal-blog-website/assets/89456541/c6ff4a20-839c-4255-bcf3-dc6846572f9e)
 
 ## Badges 🏷
+[![My Skills](https://skillicons.dev/icons?i=py,flask,postgres,nginx,docker,aws,githubactions)](https://skillicons.dev)
 
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
-![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)  
-
-## Lessons Learned 📚
-
-This is my first fully functional web project. I learned to use the Flask web framework through the process of creating a quick and simple backend.
-
-Implementing **user authentication** with flask and password hashing.
-
-Experimented with relational databases and learned to perform 
-CRUD operations through an Object-relational mapper (SQL-Alchemy) in Python.  
+## Features
+1. **Self-hosted on AWS EC2.**
+2. **Micro-Services architecture using Docker containers.**
+3. **Setup HTTPS using Let's Encrypt.**
+4. **Implemented CICD using GitHub Actions.**
 
 
 
@@ -32,8 +24,6 @@ To run this project, you will need to add the following environment
 variables to your virtual environment
 
 `SECRET_KEY` - Flask app secret key  
-
-
 
 
 ## Deployment 🌏
